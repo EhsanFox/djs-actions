@@ -89,5 +89,5 @@ runs:
   main: 'index.js'
 
 branding:
-  icon: bell,
+  icon: bell
   color: red
