@@ -73,7 +73,7 @@ inputs:
   
   # ETC Embed Options
   color:
-    description: Hex Code of a Color that would be on the embed
+    description: Hex Code of a Color that would be on the embed, it would be RANDOM if it's not provided
     required: false
 
   timestamp:
