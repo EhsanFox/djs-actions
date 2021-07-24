@@ -1,4 +1,4 @@
-# djs-actions
+# Discord.js-Webhook
 a Github Action, Full list of Features like footer/icon/....
 
 # What's so different?
