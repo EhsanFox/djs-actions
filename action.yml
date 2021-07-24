@@ -1,0 +1,85 @@
+name: Discord.js-Webhook
+author: ehsan8184@gmail.com
+description: >
+  Send Notification to a Discord Channel Using Webhooks
+  Supporting all the inputs of Discord
+
+inputs:
+  
+  # Webhook Setup #
+  id:
+    description: Discord Webhook ID, for Users Safety, it should be stored in secrets of the Repo and inserted as a context expression.
+    required: true
+  
+  token:
+    description: Discord Webhook Token, for Users Safety, it should be stored in secrets of the Repo and inserted as a context expression.
+    required: true
+  
+  # Webhook Options #
+  username:
+    description: Username of the Webhook
+    required: false
+
+  avatar:
+    description: a URL for Discord Webhook Avatar, PNG only Allowed.
+    required: false
+
+  content:
+    description: a Text to Be sent with the Webhook, it's not the embed.
+    required: false
+
+  # Embeds: #
+
+  # Title
+  title:
+    description: Title Text which would be on the embed
+    required: false
+
+  title_url:
+    description: URL of The title which is on the embed
+    required: false
+  
+  # Author
+  author:
+    description: an Author Text which would be on the embed
+    required: false
+  
+  author_icon:
+    description: Author Icon/Image that would be on the embed
+    required: false
+  
+  author_url:
+    description: URL of The author which is on the embed
+    required: false
+
+  # Footer
+  footer:
+    description: Footer Text that would be on the embed
+    required: false
+
+  footer_icon:
+    description: Footer Icon/Image that would be on the embed
+    required: false
+
+  # Image
+  image:
+    description: Image that would be on the embed
+    required: false
+  
+  # Thumbnail
+  thumbnail:
+    description: Image that would be on the embed as Thumbnail
+    required: false
+  
+  # ETC Embed Options
+  color:
+    description: Hex Code of a Color that would be on the embed
+    required: false
+
+  timestamp:
+    description: Enable Timestamp for the Embed
+    required: false
+
+runs:
+  using: 'node14'
+  main: 'index.js'
