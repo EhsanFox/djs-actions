@@ -87,3 +87,7 @@ inputs:
 runs:
   using: 'node14'
   main: 'index.js'
+
+branding:
+  icon: bell,
+  color: red
