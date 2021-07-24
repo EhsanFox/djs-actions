@@ -80,6 +80,10 @@ inputs:
     description: Enable Timestamp for the Embed
     required: false
 
+  description:
+    description: a Text for Description of Embed
+    required: false
+
 runs:
   using: 'node14'
   main: 'index.js'

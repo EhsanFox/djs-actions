@@ -5,6 +5,7 @@ const BuildMessage = require('./lib/BuildMessage');
 
 // Setup Data
 const data = {
+
     // Webhook Data
     webhook_ID: core.getInput("id"),
     webhook_TOKEN: core.getInput("token"),
@@ -15,22 +16,32 @@ const data = {
     content: core.getInput("content") ?? false,
 
     // Embed Options
-    title: core.getInput("title") ?? "",
-    url: core.getInput("url") ?? "",
-    author: {
+    title: core.getInput("title") ?? null,
+    url: core.getInput("url") ?? null,
+    description: core.getInput("description") ?? null,
+
+    author: (core.getInput("author")) ? {
         name: core.getInput("author") ?? null,
         iconURL: core.getInput("author_icon") ?? null,
         url: core.getInput("author_url") ?? null
-    },
-    footer: {
-        text: core.getInput("footer") ?? null,
+    } : null,
+
+    footer: (core.getInput("footer")) ? {
+        text: core.getInput("footer"),
         iconURL: core.getInput("footer_icon") ?? null
-    },
-    image: {
-        url: core.getInput("image") ?? null
-    },
+    } : null,
+
+    image: (core.getInput("image")) ? {
+        url: core.getInput("image")
+    } : null,
+
+    thumbnail: (core.getInput("thumbnail")) ? {
+        url: core.getInput("thumbnail")
+    } : null,
+
     timestamp: (core.getInput("timestamp")) ? true : false,
     color: core.getInput("color") ?? "RANDOM"
+
 };
 
 try {
