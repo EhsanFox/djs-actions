@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const { WebhookClient, MessageEmbed } = require("discord.js");
+const { WebhookClient } = require("discord.js");
 const BuildMessage = require('./lib/BuildMessage');
 
 // Setup Data
