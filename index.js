@@ -11,24 +11,24 @@ const data = {
     webhook_TOKEN: core.getInput("token"),
 
     // Webhook Options
-    avatar: core.getInput("avatar") ?? false,
-    username: core.getInput("username") ?? false,
-    content: core.getInput("content") ?? false,
+    avatar: core.getInput("avatar") || false,
+    username: core.getInput("username") || false,
+    content: core.getInput("content") || false,
 
     // Embed Options
-    title: core.getInput("title") ?? null,
-    url: core.getInput("url") ?? null,
-    description: core.getInput("description") ?? null,
+    title: core.getInput("title") || (github.context.eventName == "push") ? `Commit on ${github.context.repo.owner}/${github.context.repo.repo}` : `Release ${github.context.payload.release.tag_name}`,
+    url: core.getInput("url")  || (github.context.eventName == "push") ? github.context.payload.head_commit.url : github.context.payload.release.url,
+    description: core.getInput("description") || (github.context.eventName == "push") ? `` : ``,
 
     author: (core.getInput("author")) ? {
-        name: core.getInput("author") ?? null,
-        iconURL: core.getInput("author_icon") ?? null,
-        url: core.getInput("author_url") ?? null
+        name: core.getInput("author"),
+        iconURL: core.getInput("author_icon") || null,
+        url: core.getInput("author_url") || null
     } : null,
 
     footer: (core.getInput("footer")) ? {
         text: core.getInput("footer"),
-        iconURL: core.getInput("footer_icon") ?? null
+        iconURL: core.getInput("footer_icon") || null
     } : null,
 
     image: (core.getInput("image")) ? {
@@ -40,7 +40,7 @@ const data = {
     } : null,
 
     timestamp: (core.getInput("timestamp")) ? true : false,
-    color: core.getInput("color") ?? "RANDOM"
+    color: core.getInput("color") || "RANDOM"
 
 };
 
@@ -58,5 +58,5 @@ try {
         Client.send(ResultMessage);
 
 } catch (error) {
-    core.error("[Discord.js]: ", error)
+    core.setFailed("[Discord.js]: ", error)
 }
