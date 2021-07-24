@@ -35,7 +35,7 @@ inputs:
     description: Title Text which would be on the embed
     required: false
 
-  title_url:
+  url:
     description: URL of The title which is on the embed
     required: false
   
