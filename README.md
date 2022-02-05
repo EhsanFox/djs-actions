@@ -6,8 +6,8 @@ well, i've seen all other actions, none of them supports **All** Input of discor
 
 # Example
 ```
-- name: Send Discord Message
-  uses: ehsanfox/discord.js-webhook
+- name: Discord.js-Webhook
+  uses: EhsanFox/djs-actions@0.1.0
   with:
     # Important/Required Data
     id: ${{ secrets.webhook_id }}
